@@ -12,6 +12,7 @@
 | `tls_echo_client.py` | TLS 回显客户端示例，与 `tls_echo_server.py` 配套。 |
 | `mini_tls_server.py` | 简化版 TLS 服务端示例，演示证书加载与加密通信流程。 |
 | `get_or_post.py` | 简单 HTTP 请求示例，可执行 GET/POST 以练习应用层协议。 |
+| `ssh_minimal_client.py` | 最小 SSH 连接示例，仅完成 banner 交换。 |
 | `cert.pem` | 自签名证书（用于本地测试）。 |
 | `key.pem` | 自签名证书私钥（用于本地测试）。 |
 
@@ -76,6 +77,15 @@ python get_or_post.py
 ```
 
 脚本会执行一次 HTTP 请求，适合配合抓包工具学习 HTTP 报文格式。
+
+### 5. 运行最小 SSH 连接示例
+
+```bash
+python ssh_minimal_client.py
+```
+
+该脚本只完成 SSH 的识别字符串（banner）交换，不包含密钥协商、加密与认证流程。默认连接 `127.0.0.1:22`，请根据需要修改 `HOST` 与 `PORT`。
+
 
 ## 常见问题
 
