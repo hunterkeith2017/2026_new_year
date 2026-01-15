@@ -28,6 +28,9 @@ new_year_2026 = [
   "examples/ctypes_shared/*.so",
   "examples/ctypes_shared/*.dylib",
   "examples/ctypes_shared/*.dll",
-  "examples/extension_pkg/*",
-  "examples/extension_pkg/src/hello_ext/*",
+  "examples/extension_pkg/README.md",
+  "examples/extension_pkg/pyproject.toml",
+  "examples/extension_pkg/src/hello_ext/*.py",
+  "examples/extension_pkg/src/hello_ext/*.c",
+  "examples/extension_pkg/src/hello_ext/*.cpp",
 ]

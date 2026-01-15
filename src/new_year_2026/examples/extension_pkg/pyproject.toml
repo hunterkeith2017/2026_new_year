@@ -1,3 +1,25 @@
 [build-system]
 requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "hello-ext-demo"
+version = "0.1.0"
+description = "Minimal C/C++ extension demo package"
+readme = "README.md"
+requires-python = ">=3.8"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[[tool.setuptools.ext-modules]]
+name = "hello_ext.hello_c"
+sources = ["src/hello_ext/hello_c.c"]
+
+[[tool.setuptools.ext-modules]]
+name = "hello_ext.hello_cpp"
+sources = ["src/hello_ext/hello_cpp.cpp"]
+language = "c++"
