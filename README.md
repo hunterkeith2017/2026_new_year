@@ -7,6 +7,7 @@
 本仓库包含一组用于学习 TCP/TLS 基础通信、HTTP 请求与证书配置的示例脚本。所有示例均以 Python 编写，适合用于本地或内网环境中学习网络编程与 TLS 加密流程。
 
 文档地址：https://2026-new-year.readthedocs.io/en/stable/
+测试一下
 
 ## 目录结构
 
