@@ -37,6 +37,7 @@ jobs:
           path: dist/ruff-report.json
       - name: Run tests (pytest)
         run: |
+          mkdir -p dist
           pytest -q \
             --junitxml=dist/pytest-report.xml || true
       - name: Upload test report
