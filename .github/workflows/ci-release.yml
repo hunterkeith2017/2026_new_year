@@ -127,3 +127,12 @@ jobs:
           python -m twine upload --repository-url "$TWINE_REPOSITORY_URL" \
             dist/*.whl dist/*.tar.gz \
             dist/extension_pkg/*.whl dist/extension_pkg/*.tar.gz
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          files: dist/**
+          # generate_release_notes: true
+          body_path: CHANGELOG.md

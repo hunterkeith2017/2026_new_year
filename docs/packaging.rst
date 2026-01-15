@@ -29,7 +29,8 @@ Release tagging
 ---------------
 
 When you create a git tag (for example, ``v1.0.0``), the CI workflow builds
-packages and publishes them to GitHub Packages.
+packages, publishes them to GitHub Packages, and attaches artifacts to the
+GitHub Release.
 
 GitHub Packages
 ---------------
