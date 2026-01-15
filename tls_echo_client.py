@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-最小可跑的 TLS echo client，演示：
-- 先建立 TCP，再在其上做 TLS 握手
+最小可跑的 TLS echo client,演示:
+- 先建立 TCP,再在其上做 TLS 握手
 - 用 cert.pem 当作“受信任的根”（自签时常见做法）
 """
 import socket
