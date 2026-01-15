@@ -29,8 +29,9 @@ jobs:
           pip install -U pytest ruff
       - name: Lint (ruff)
         run: |
+          mkdir -p dist
           # 你没有 ruff 配置也能跑；以后可在 pyproject.toml 里加规则
-          ruff check . --output-format=json > dist/ruff-report.json || true
+          ruff check src --output-format=json > dist/ruff-report.json || true
       - uses: actions/upload-artifact@v4
         with:
           name: ruff-report
@@ -109,4 +110,3 @@ jobs:
           files: dist/*
           # generate_release_notes: true
           body_path: CHANGELOG.md
-

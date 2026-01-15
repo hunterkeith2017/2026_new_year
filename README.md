@@ -103,6 +103,11 @@ python ssh_minimal_client.py
 - 修改 TLS 示例，尝试双向认证（mTLS）。
 - 为 `get_or_post.py` 添加自定义头部或 JSON 请求体。
 
+## 本地扩展与共享库示例
+
+- `src/new_year_2026/examples/ctypes_shared`：构建 `.so/.dylib/.dll` 并用 `ctypes` 加载调用。
+- `src/new_year_2026/examples/extension_pkg`：完整的 C/C++ 扩展包示例，构建产物在 macOS/Linux 为 `.so`，在 Windows 为 `.pyd`。
+
 ## 许可说明
 
 本仓库仅用于学习与教学示例，证书与私钥仅用于本地测试，请勿在生产环境直接使用。

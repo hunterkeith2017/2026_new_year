@@ -22,4 +22,9 @@ package-dir = {"" = "src"}
 where = ["src"]
 
 [tool.setuptools.package-data]
-new_year_2026 = ["*.pem"]
+new_year_2026 = [
+  "*.pem",
+  "examples/ctypes_shared/*",
+  "examples/extension_pkg/*",
+  "examples/extension_pkg/src/hello_ext/*",
+]

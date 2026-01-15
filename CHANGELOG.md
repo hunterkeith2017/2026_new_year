@@ -1,4 +1,9 @@
-## [1.0.7] - 2026-01-15
+## [Unreleased]
+
+- Add ctypes shared-library demo for .so/.dylib/.dll
+- Add C/C++ extension package demo (.so/.pyd)
+
+## [1.0.11] - 2026-01-15
 
 ## ✨ What's Changed
 
@@ -12,7 +17,7 @@
 - Source distribution (.tar.gz)
 
 ## 🔗 Full Changelog
-https://github.com/hunterkeith2017/2026_new_year/compare/v1.0.9...v1.0.10
+https://github.com/hunterkeith2017/2026_new_year/compare/v1.0.10...v1.0.11
 
 ## 🧪 Tested on
 - Python 3.9 (conda)
