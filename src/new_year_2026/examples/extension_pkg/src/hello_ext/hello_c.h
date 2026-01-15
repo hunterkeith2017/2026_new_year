@@ -1,12 +1,10 @@
-#include "hello_c.h"
+#pragma once
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-int add_ints(int a, int b) {
-    return a + b;
-}
+int add_ints(int a, int b);
 
 #ifdef __cplusplus
 }

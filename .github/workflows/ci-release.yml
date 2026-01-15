@@ -70,13 +70,13 @@ jobs:
           ls -lah dist
       - name: Build C/C++ extension demo
         run: |
-          python -m pip install -U pip build
+          python -m pip install -U pip build pybind11
           cd src/new_year_2026/examples/extension_pkg
-          python -m build
-          ls -lah dist
+          INCLUDES="$(python -m pybind11 --includes)"
+          CXXFLAGS="$INCLUDES" CPPFLAGS="$INCLUDES" \
+            python -m build --no-isolation --outdir "$GITHUB_WORKSPACE/dist/extension_pkg"
+          ls -lah "$GITHUB_WORKSPACE/dist/extension_pkg"
           cd -
-          mkdir -p dist/extension_pkg
-          cp -a src/new_year_2026/examples/extension_pkg/dist/* dist/extension_pkg/
           
       - name: Upload build artifacts (Actions)
         uses: actions/upload-artifact@v4
