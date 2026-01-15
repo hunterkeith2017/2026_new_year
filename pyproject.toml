@@ -25,6 +25,9 @@ where = ["src"]
 new_year_2026 = [
   "*.pem",
   "examples/ctypes_shared/*",
+  "examples/ctypes_shared/*.so",
+  "examples/ctypes_shared/*.dylib",
+  "examples/ctypes_shared/*.dll",
   "examples/extension_pkg/*",
   "examples/extension_pkg/src/hello_ext/*",
 ]

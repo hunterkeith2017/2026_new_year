@@ -59,6 +59,10 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Build ctypes shared library (for wheel)
+        run: |
+          demo_dir=src/new_year_2026/examples/ctypes_shared
+          cc -shared -fPIC -o "$demo_dir/libhello.so" "$demo_dir/hello.c"
       - name: Build sdist & wheel
         run: |
           python -m pip install -U pip build
@@ -73,12 +77,7 @@ jobs:
           cd -
           mkdir -p dist/extension_pkg
           cp -a src/new_year_2026/examples/extension_pkg/dist/* dist/extension_pkg/
-      - name: Build ctypes shared library demo
-        run: |
-          demo_dir=src/new_year_2026/examples/ctypes_shared
-          mkdir -p dist/ctypes_shared
-          cc -shared -fPIC -o "$demo_dir/libhello.so" "$demo_dir/hello.c"
-          cp -a "$demo_dir/hello_ctypes.py" "$demo_dir/libhello.so" "$demo_dir/README.md" dist/ctypes_shared/
+          
       - name: Upload build artifacts (Actions)
         uses: actions/upload-artifact@v4
         with:
