@@ -1,6 +1,12 @@
 # 2026 New Year 练习项目
 
+[![Documentation Status](https://readthedocs.org/projects/2026-new-year/badge/?version=stable)](https://2026-new-year.readthedocs.io/en/stable/)
+[![CI Release](https://github.com/hunterkeith2017/2026_new_year/actions/workflows/ci-release.yml/badge.svg)](https://github.com/hunterkeith2017/2026_new_year/actions/workflows/ci-release.yml)
+[![Docs](https://github.com/hunterkeith2017/2026_new_year/actions/workflows/docs.yml/badge.svg)](https://github.com/hunterkeith2017/2026_new_year/actions/workflows/docs.yml)
+
 本仓库包含一组用于学习 TCP/TLS 基础通信、HTTP 请求与证书配置的示例脚本。所有示例均以 Python 编写，适合用于本地或内网环境中学习网络编程与 TLS 加密流程。
+
+文档地址：https://2026-new-year.readthedocs.io/en/stable/
 
 ## 目录结构
 
