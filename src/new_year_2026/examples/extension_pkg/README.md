@@ -13,9 +13,8 @@ On macOS/Linux you will get `.so` files; on Windows you will get `.pyd` files.
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-python -m pip install -U pip build pybind11 wheel
-INCLUDES="$(python -m pybind11 --includes)"
-CXXFLAGS="$INCLUDES" CPPFLAGS="$INCLUDES" python -m build --no-isolation
+python -m pip install -U pip build
+python -m build
 python -m pip install dist/*.whl
 ```
 
@@ -28,6 +27,5 @@ python -c "import hello_ext; print(hello_ext.add(2, 3)); print(hello_ext.mul(3, 
 ## Build from source (editable)
 
 ```bash
-INCLUDES="$(python -m pybind11 --includes)"
-CXXFLAGS="$INCLUDES" CPPFLAGS="$INCLUDES" python -m pip install --no-build-isolation -v .
+python -m pip install -v .
 ```
