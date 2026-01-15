@@ -19,7 +19,7 @@ def main():
     ctx.load_verify_locations("cert.pem")
 
     # 2) 先做 TCP 连接
-    //TODO 加一段详细解析
+    #TODO 加一段详细解析
     with socket.create_connection((HOST, PORT)) as sock:
         print(f"[cli] TCP connected to {HOST}:{PORT}, starting TLS handshake ...")
 
