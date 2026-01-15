@@ -7,8 +7,8 @@ CI workflows
 The repository uses GitHub Actions to validate builds and publish release
 artifacts.
 
-- ``ci-release.yml`` runs tests, builds sdist/wheel, and publishes GitHub
-  Releases when a tag is pushed.
+- ``ci-release.yml`` runs tests, builds sdist/wheel, and publishes to GitHub
+  Packages when a tag is pushed.
 - ``docs.yml`` builds Sphinx documentation on each push/PR to catch breakages.
 
 Release flow
