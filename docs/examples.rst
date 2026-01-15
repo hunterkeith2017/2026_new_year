@@ -4,6 +4,10 @@ Examples
 ctypes Shared Library
 ---------------------
 
+This demo compiles a tiny C library and loads it via ``ctypes``. It is the
+fastest path to understand how Python calls into native code without building
+a full extension.
+
 Build the shared library and run the ctypes demo:
 
 .. code-block:: bash
@@ -12,8 +16,14 @@ Build the shared library and run the ctypes demo:
    cc -shared -fPIC -o libhello.so hello.c
    python hello_ctypes.py
 
+.. note::
+
+   On macOS, use ``libhello.dylib``. On Windows, build a ``hello.dll`` with MSVC.
+
 C/C++ Extension Package (pybind11)
 ----------------------------------
+
+This demo builds a standard Python package with a compiled extension module.
 
 Build the extension package and install the wheel:
 

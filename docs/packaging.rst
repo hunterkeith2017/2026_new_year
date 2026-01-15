@@ -1,14 +1,18 @@
 Packaging
 =========
 
-Main package:
+Main package
+------------
 
 .. code-block:: bash
 
    python -m pip install -U build
    python -m build
 
-Extension demo package:
+This produces ``dist/*.whl`` and ``dist/*.tar.gz`` for the main package.
+
+Extension demo package
+----------------------
 
 .. code-block:: bash
 
@@ -20,3 +24,9 @@ Notes:
 
 - The extension demo builds native binaries (.so/.pyd).
 - A C/C++ compiler is required on the build machine.
+
+Release tagging
+---------------
+
+When you create a git tag (for example, ``v1.0.0``), the CI workflow builds
+packages and attaches artifacts to the GitHub Release.
