@@ -12,7 +12,7 @@
 - Source distribution (.tar.gz)
 
 ## 🔗 Full Changelog
-https://github.com/hunterkeith2017/2026_new_year/compare/v1.0.7...${{ github.ref_name }}
+https://github.com/hunterkeith2017/2026_new_year/compare/v1.0.9...v1.0.10
 
 ## 🧪 Tested on
 - Python 3.9 (conda)
