@@ -11,9 +11,13 @@ requires-python = ">=3.8"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
+include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+hello_ext = ["*.h"]
 
 [[tool.setuptools.ext-modules]]
 name = "hello_ext._core"
