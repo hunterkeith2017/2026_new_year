@@ -41,6 +41,6 @@ also publish manually:
 .. code-block:: bash
 
    python -m pip install -U twine
-   python -m twine upload --repository-url https://upload.pypi.pkg.github.com/<OWNER>/ dist/*
+   python -m twine upload --repository-url https://pypi.pkg.github.com/<OWNER>/ dist/*
 
 Use a GitHub token with ``packages:write`` permissions for authentication.
