@@ -22,4 +22,5 @@ sources = [
   "src/hello_ext/hello_c.c",
   "src/hello_ext/hello_cpp.cpp",
 ]
+include-dirs = ["src/hello_ext"]
 language = "c++"
