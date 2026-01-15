@@ -64,11 +64,26 @@ jobs:
           python -m pip install -U pip build
           python -m build
           ls -lah dist
+      - name: Build C/C++ extension demo
+        run: |
+          python -m pip install -U pip build
+          cd src/new_year_2026/examples/extension_pkg
+          python -m build
+          ls -lah dist
+          cd -
+          mkdir -p dist/extension_pkg
+          cp -a src/new_year_2026/examples/extension_pkg/dist/* dist/extension_pkg/
+      - name: Build ctypes shared library demo
+        run: |
+          demo_dir=src/new_year_2026/examples/ctypes_shared
+          mkdir -p dist/ctypes_shared
+          cc -shared -fPIC -o "$demo_dir/libhello.so" "$demo_dir/hello.c"
+          cp -a "$demo_dir/hello_ctypes.py" "$demo_dir/libhello.so" "$demo_dir/README.md" dist/ctypes_shared/
       - name: Upload build artifacts (Actions)
         uses: actions/upload-artifact@v4
         with:
           name: python-dist
-          path: dist/*
+          path: dist/**
 
   release:
     if: startsWith(github.ref, 'refs/tags/')
@@ -107,6 +122,6 @@ jobs:
         with:
           tag_name: ${{ github.ref_name }}
           name: Release ${{ github.ref_name }}
-          files: dist/*
+          files: dist/**
           # generate_release_notes: true
           body_path: CHANGELOG.md
