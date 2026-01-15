@@ -13,7 +13,7 @@ On macOS/Linux you will get `.so` files; on Windows you will get `.pyd` files.
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-python -m pip install -U pip build pybind11
+python -m pip install -U pip build pybind11 wheel
 INCLUDES="$(python -m pybind11 --includes)"
 CXXFLAGS="$INCLUDES" CPPFLAGS="$INCLUDES" python -m build --no-isolation
 python -m pip install dist/*.whl
