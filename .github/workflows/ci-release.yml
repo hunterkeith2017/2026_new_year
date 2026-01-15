@@ -52,6 +52,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # 关键：不要浅克隆
       - uses: actions/setup-python@v5
         with:
           python-version: "3.9"
@@ -106,22 +108,5 @@ jobs:
           name: Release ${{ github.ref_name }}
           files: dist/*
           # generate_release_notes: true
-          body: |
-            ## ✨ What's Changed
-
-            - Add TCP multi-process demo
-            - Add TLS echo client
-            - Improve CI release pipeline
-            - Fix packaging metadata
-
-            ## 📦 Artifacts
-            - Python wheel (.whl)
-            - Source distribution (.tar.gz)
-
-            ## 🔗 Full Changelog
-            https://github.com/hunterkeith2017/2026_new_year/compare/v1.0.8...${{ github.ref_name }}
-
-            ## 🧪 Tested on
-            - Python 3.9 (conda)
-            - macOS / Linux (CI)
+          body_path: CHANGELOG.md
 
