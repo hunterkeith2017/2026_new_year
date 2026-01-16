@@ -20,7 +20,7 @@ Extension demo package
    python -m pip install -U build pybind11 wheel
    python -m build
 
-For manylinux wheels (CI uses this), run ``cibuildwheel``:
+For manylinux and macOS wheels (CI uses this), run ``cibuildwheel``:
 
 .. code-block:: bash
 
