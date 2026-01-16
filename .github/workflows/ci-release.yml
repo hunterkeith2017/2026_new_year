@@ -131,7 +131,7 @@ jobs:
       #       dist/extension_pkg/*.whl dist/extension_pkg/*.tar.gz
 
       - name: Publish to GitHub Packages (PyPI)
-        uses: pypa/gh-action-pypi-publish@release/v1
+        uses: pypa/gh-action-pypi-publish@release/v1.13
         with:
           # GitHub Packages repository URL
           repository-url: https://pypi.pkg.github.com/${{ github.repository_owner }}
