@@ -134,13 +134,7 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           # GitHub Packages repository URL
-          repository_url: https://upload.pypi.pkg.github.com/${{ github.repository_owner }}/
-          # Specify the files to upload manually
-            files: |
-              dist/*.whl
-              dist/*.tar.gz
-              dist/extension_pkg/*.whl
-              dist/extension_pkg/*.tar.gz
+          repository-url: https://upload.pypi.pkg.github.com/${{ github.repository_owner }}/
         env:
           TWINE_USERNAME: ${{ github.actor }}
           TWINE_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
