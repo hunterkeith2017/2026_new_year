@@ -1,5 +1,11 @@
 """ctypes shared library demo helpers."""
 
-from . import hello_ctypes
+from typing import Any
 
-__all__ = ["hello_ctypes"]
+__all__ = ["main"]
+
+
+def main() -> Any:
+    from . import hello_ctypes
+
+    return hello_ctypes.main()
