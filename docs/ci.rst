@@ -9,6 +9,8 @@ artifacts.
 
 - ``ci-release.yml`` runs tests, builds sdist/wheel, publishes to PyPI with
   ``twine``, and attaches artifacts to a GitHub Release when a tag is pushed.
+  The extension demo wheels are built with ``cibuildwheel`` to produce
+  manylinux-compatible tags.
 - ``docs.yml`` builds Sphinx documentation on each push/PR to catch breakages.
 
 Release flow

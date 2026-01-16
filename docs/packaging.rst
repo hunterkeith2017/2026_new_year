@@ -20,6 +20,14 @@ Extension demo package
    python -m pip install -U build pybind11 wheel
    python -m build
 
+For manylinux wheels (CI uses this), run ``cibuildwheel``:
+
+.. code-block:: bash
+
+   python -m pip install -U cibuildwheel
+   CIBW_BUILD="cp39-*" CIBW_SKIP="pp* *musllinux*" \
+     python -m cibuildwheel --output-dir dist
+
 Notes:
 
 - The extension demo builds native binaries (.so/.pyd).
