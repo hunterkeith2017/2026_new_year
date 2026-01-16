@@ -1,14 +1,10 @@
 [build-system]
-requires = ["setuptools>=68", "wheel", "pybind11>=2.10", "setuptools-scm>=8"]
+requires = ["setuptools>=68", "wheel", "pybind11>=2.10"]
 build-backend = "setuptools.build_meta"
-
-[tool.setuptools_scm]
-version_scheme = "release-branch-semver"
-local_scheme = "no-local-version"
 
 [project]
 name = "hello-ext-demo"
-dynamic = ["version"]
+version = "1.0.1"
 description = "Minimal pybind11 extension demo package"
 readme = "README.md"
 requires-python = ">=3.8"
