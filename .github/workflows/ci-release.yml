@@ -117,18 +117,33 @@ jobs:
           test "$(ls -A dist)"
           echo "Preflight OK"
 
-      - name: Publish GitHub Packages (PyPI)
+      # - name: Publish GitHub Packages (PyPI)
+      #   env:
+      #     TWINE_USERNAME: ${{ github.actor }}
+      #     TWINE_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+      #     TWINE_REPOSITORY_URL: https://upload.pypi.pkg.github.com//${{github.repository}}
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get install --reinstall ca-certificates
+      #     python -m pip install -U pip twine
+      #     TWINE_DISABLE_SSL_VERIFY=true python -m twine upload --repository-url "$TWINE_REPOSITORY_URL" \
+      #       dist/*.whl dist/*.tar.gz \
+      #       dist/extension_pkg/*.whl dist/extension_pkg/*.tar.gz
+
+      - name: Publish to GitHub Packages (PyPI)
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          # GitHub Packages repository URL
+          repository_url: https://upload.pypi.pkg.github.com/${{ github.repository_owner }}/
+          # Specify the files to upload manually
+            files: |
+              dist/*.whl
+              dist/*.tar.gz
+              dist/extension_pkg/*.whl
+              dist/extension_pkg/*.tar.gz
         env:
           TWINE_USERNAME: ${{ github.actor }}
           TWINE_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
-          TWINE_REPOSITORY_URL: https://upload.pypi.pkg.github.com//${{github.repository}}
-        run: |
-          sudo apt-get update
-          sudo apt-get install --reinstall ca-certificates
-          python -m pip install -U pip twine
-          TWINE_DISABLE_SSL_VERIFY=true python -m twine upload --repository-url "$TWINE_REPOSITORY_URL" \
-            dist/*.whl dist/*.tar.gz \
-            dist/extension_pkg/*.whl dist/extension_pkg/*.tar.gz
 
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
