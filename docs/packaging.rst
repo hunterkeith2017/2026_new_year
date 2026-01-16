@@ -29,18 +29,16 @@ Release tagging
 ---------------
 
 When you create a git tag (for example, ``v1.0.0``), the CI workflow builds
-packages, publishes them to GitHub Packages, and attaches artifacts to the
-GitHub Release.
+packages, publishes them to PyPI, and attaches artifacts to the GitHub Release.
 
-GitHub Packages
----------------
+PyPI
+----
 
-This project publishes to GitHub Packages (PyPI registry) on tag builds. You can
-also publish manually:
+This project publishes to PyPI on tag builds. You can also publish manually:
 
 .. code-block:: bash
 
    python -m pip install -U twine
-   python -m twine upload --repository-url https://pypi.pkg.github.com/<OWNER>/ dist/*
+   python -m twine upload dist/*
 
-Use a GitHub token with ``packages:write`` permissions for authentication.
+Use a PyPI API token for authentication.

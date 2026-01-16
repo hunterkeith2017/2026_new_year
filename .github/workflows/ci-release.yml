@@ -9,7 +9,6 @@ on:
 
 permissions:
   contents: write
-  packages: write
  
 jobs:
   test:
@@ -117,27 +116,13 @@ jobs:
           test "$(ls -A dist)"
           echo "Preflight OK"
 
-      # - name: Publish GitHub Packages (PyPI)
-      #   env:
-      #     TWINE_USERNAME: ${{ github.actor }}
-      #     TWINE_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
-      #     TWINE_REPOSITORY_URL: https://upload.pypi.pkg.github.com/${{github.repository}}
-      #   run: |
-      #     sudo apt-get update
-      #     sudo apt-get install --reinstall ca-certificates
-      #     python -m pip install -U pip twine
-      #     TWINE_DISABLE_SSL_VERIFY=true python -m twine upload --repository-url "$TWINE_REPOSITORY_URL" \
-      #       dist/*.whl dist/*.tar.gz \
-      #       dist/extension_pkg/*.whl dist/extension_pkg/*.tar.gz
-
-      - name: Publish to GitHub Packages (PyPI)
+      - name: Publish to PyPI (twine)
         env:
-          TWINE_USERNAME: ${{ github.actor }}
-          TWINE_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
-          TWINE_REPOSITORY_URL: https://pypi.pkg.github.com/${{ github.repository_owner }}/
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
         run: |
           python -m pip install -U pip twine
-          python -m twine upload --repository-url "$TWINE_REPOSITORY_URL" \
+          python -m twine upload \
             dist/*.whl dist/*.tar.gz \
             dist/extension_pkg/*.whl dist/extension_pkg/*.tar.gz
 
