@@ -13,15 +13,15 @@
 
 | 文件 | 作用说明 |
 | --- | --- |
-| `tcp_server.py` | 经典 TCP 回显服务器示例，监听端口并返回客户端发送内容。 |
-| `tcp_client.py` | TCP 客户端示例，与 `tcp_server.py` 配套。 |
-| `tls_echo_server.py` | 基于 TLS 的回显服务端，使用本仓库的证书与私钥。 |
-| `tls_echo_client.py` | TLS 回显客户端示例，与 `tls_echo_server.py` 配套。 |
-| `mini_tls_server.py` | 简化版 TLS 服务端示例，演示证书加载与加密通信流程。 |
-| `get_or_post.py` | 简单 HTTP 请求示例，可执行 GET/POST 以练习应用层协议。 |
-| `ssh_minimal_client.py` | 最小 SSH 连接示例，仅完成 banner 交换。 |
-| `cert.pem` | 自签名证书（用于本地测试）。 |
-| `key.pem` | 自签名证书私钥（用于本地测试）。 |
+| `tcp_tls/tcp_server.py` | 经典 TCP 回显服务器示例，监听端口并返回客户端发送内容。 |
+| `tcp_tls/tcp_client.py` | TCP 客户端示例，与 `tcp_server.py` 配套。 |
+| `tcp_tls/tls_echo_server.py` | 基于 TLS 的回显服务端，使用本仓库的证书与私钥。 |
+| `tcp_tls/tls_echo_client.py` | TLS 回显客户端示例，与 `tls_echo_server.py` 配套。 |
+| `tcp_tls/mini_tls_server.py` | 简化版 TLS 服务端示例，演示证书加载与加密通信流程。 |
+| `tcp_tls/get_or_post.py` | 简单 HTTP 请求示例，可执行 GET/POST 以练习应用层协议。 |
+| `tcp_tls/ssh_minimal_client.py` | 最小 SSH 连接示例，仅完成 banner 交换。 |
+| `tcp_tls/cert.pem` | 自签名证书（用于本地测试）。 |
+| `tcp_tls/key.pem` | 自签名证书私钥（用于本地测试）。 |
 
 ## 环境准备
 
@@ -42,13 +42,13 @@ source .venv/bin/activate
 启动服务端：
 
 ```bash
-python tcp_server.py
+python -m new_year_2026.tcp_tls.tcp_server
 ```
 
 在另一终端启动客户端：
 
 ```bash
-python tcp_client.py
+python -m new_year_2026.tcp_tls.tcp_client
 ```
 
 客户端发送的内容会被服务端原样返回，用于验证基础 TCP 通信。
@@ -58,21 +58,21 @@ python tcp_client.py
 启动 TLS 服务端：
 
 ```bash
-python tls_echo_server.py
+python -m new_year_2026.tcp_tls.tls_echo_server
 ```
 
 再运行客户端：
 
 ```bash
-python tls_echo_client.py
+python -m new_year_2026.tcp_tls.tls_echo_client
 ```
 
-此示例展示如何在 TCP 之上加入 TLS 加密层。若需要替换证书，请同时更新 `cert.pem` 与 `key.pem`。
+此示例展示如何在 TCP 之上加入 TLS 加密层。若需要替换证书，请同时更新 `tcp_tls/cert.pem` 与 `tcp_tls/key.pem`。
 
 ### 3. 运行简化 TLS 服务端
 
 ```bash
-python mini_tls_server.py
+python -m new_year_2026.tcp_tls.mini_tls_server
 ```
 
 该脚本提供更紧凑的实现方式，适合阅读或二次修改。
@@ -80,7 +80,7 @@ python mini_tls_server.py
 ### 4. 运行 HTTP GET/POST 示例
 
 ```bash
-python get_or_post.py
+python -m new_year_2026.tcp_tls.get_or_post
 ```
 
 脚本会执行一次 HTTP 请求，适合配合抓包工具学习 HTTP 报文格式。
@@ -88,7 +88,7 @@ python get_or_post.py
 ### 5. 运行最小 SSH 连接示例
 
 ```bash
-python ssh_minimal_client.py
+python -m new_year_2026.tcp_tls.ssh_minimal_client
 ```
 
 该脚本只完成 SSH 的识别字符串（banner）交换，不包含密钥协商、加密与认证流程。默认连接 `127.0.0.1:22`，请根据需要修改 `HOST` 与 `PORT`。
@@ -98,7 +98,7 @@ python ssh_minimal_client.py
 
 ### 证书不被信任怎么办？
 
-当前 `cert.pem` 为自签名证书，系统默认不会信任。用于本地学习时可忽略该告警；如需生产环境使用，请替换为权威机构签发证书。
+当前 `tcp_tls/cert.pem` 为自签名证书，系统默认不会信任。用于本地学习时可忽略该告警；如需生产环境使用，请替换为权威机构签发证书。
 
 ### 端口占用或无法绑定？
 
@@ -106,14 +106,14 @@ python ssh_minimal_client.py
 
 ## 练习建议
 
-- 将 `tcp_server.py` 改为多线程/异步版本，体验并发处理。
+- 将 `tcp_tls/tcp_server.py` 改为多线程/异步版本，体验并发处理。
 - 修改 TLS 示例，尝试双向认证（mTLS）。
-- 为 `get_or_post.py` 添加自定义头部或 JSON 请求体。
+- 为 `tcp_tls/get_or_post.py` 添加自定义头部或 JSON 请求体。
 
 ## 本地扩展与共享库示例
 
-- `src/new_year_2026/examples/ctypes_shared`：构建 `.so/.dylib/.dll` 并用 `ctypes` 加载调用。
-- `src/new_year_2026/examples/extension_pkg`：完整的 C/C++ 扩展包示例，构建产物在 macOS/Linux 为 `.so`，在 Windows 为 `.pyd`。
+- `src/new_year_2026/ctypes_shared`：构建 `.so/.dylib/.dll` 并用 `ctypes` 加载调用。
+- `src/new_year_2026/hello_ext`：主包内的 C/C++ 扩展示例，构建产物在 macOS/Linux 为 `.so`，在 Windows 为 `.pyd`。
 
 ## 许可说明
 

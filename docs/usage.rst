@@ -15,35 +15,35 @@ TCP echo:
 
 .. code-block:: bash
 
-   python -m new_year_2026.tcp_server
-   python -m new_year_2026.tcp_client
+   python -m new_year_2026.tcp_tls.tcp_server
+   python -m new_year_2026.tcp_tls.tcp_client
 
 TLS echo:
 
 .. code-block:: bash
 
-   python -m new_year_2026.tls_echo_server
-   python -m new_year_2026.tls_echo_client
+   python -m new_year_2026.tcp_tls.tls_echo_server
+   python -m new_year_2026.tcp_tls.tls_echo_client
 
 HTTP demo:
 
 .. code-block:: bash
 
-   python -m new_year_2026.get_or_post
+   python -m new_year_2026.tcp_tls.get_or_post
 
 Minimal SSH banner:
 
 .. code-block:: bash
 
-   python -m new_year_2026.ssh_minimal_client
+   python -m new_year_2026.tcp_tls.ssh_minimal_client
 
 Import from Python
 ------------------
 
 .. code-block:: python
 
-   import new_year_2026.tcp_server
-   import new_year_2026.tls_echo_client
+   import new_year_2026.tcp_tls.tcp_server
+   import new_year_2026.tcp_tls.tls_echo_client
 
 .. tip::
 

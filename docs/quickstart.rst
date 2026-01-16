@@ -25,21 +25,21 @@ Start the server:
 
 .. code-block:: bash
 
-   python -m new_year_2026.tcp_server
+   python -m new_year_2026.tcp_tls.tcp_server
 
 In another terminal, run the client:
 
 .. code-block:: bash
 
-   python -m new_year_2026.tcp_client
+   python -m new_year_2026.tcp_tls.tcp_client
 
 Run a TLS echo demo
 -------------------
 
 .. code-block:: bash
 
-   python -m new_year_2026.tls_echo_server
-   python -m new_year_2026.tls_echo_client
+   python -m new_year_2026.tcp_tls.tls_echo_server
+   python -m new_year_2026.tcp_tls.tls_echo_client
 
 .. note::
 

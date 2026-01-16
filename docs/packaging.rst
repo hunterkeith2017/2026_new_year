@@ -11,12 +11,11 @@ Main package
 
 This produces ``dist/*.whl`` and ``dist/*.tar.gz`` for the main package.
 
-Extension demo package
-----------------------
+Extension module
+----------------
 
 .. code-block:: bash
 
-   cd src/new_year_2026/examples/extension_pkg
    python -m pip install -U build pybind11 wheel
    python -m build
 

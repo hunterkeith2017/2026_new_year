@@ -8,13 +8,13 @@ except ImportError as exc:
 
 ext_modules = [
     Extension(
-        "hello_ext._core",
+        "new_year_2026.hello_ext._core",
         sources=[
-            "src/hello_ext/bindings.cpp",
-            "src/hello_ext/hello_c.c",
-            "src/hello_ext/hello_cpp.cpp",
+            "src/new_year_2026/hello_ext/bindings.cpp",
+            "src/new_year_2026/hello_ext/hello_c.c",
+            "src/new_year_2026/hello_ext/hello_cpp.cpp",
         ],
-        include_dirs=["src/hello_ext", pybind11.get_include()],
+        include_dirs=["src/new_year_2026/hello_ext", pybind11.get_include()],
         language="c++",
     )
 ]

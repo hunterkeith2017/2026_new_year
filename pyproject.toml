@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=68", "wheel", "setuptools-scm>=8"]
+requires = ["setuptools>=68", "wheel", "setuptools-scm>=8", "pybind11>=2.10"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -23,17 +23,10 @@ where = ["src"]
 
 [tool.setuptools.package-data]
 new_year_2026 = [
-  "*.pem",
-  "examples/ctypes_shared/*",
-  "examples/ctypes_shared/*.so",
-  "examples/ctypes_shared/*.dylib",
-  "examples/ctypes_shared/*.dll",
-  "examples/extension_pkg/README.md",
-  "examples/extension_pkg/pyproject.toml",
-  "examples/extension_pkg/MANIFEST.in",
-  "examples/extension_pkg/setup.py",
-  "examples/extension_pkg/src/hello_ext/*.py",
-  "examples/extension_pkg/src/hello_ext/*.h",
-  "examples/extension_pkg/src/hello_ext/*.c",
-  "examples/extension_pkg/src/hello_ext/*.cpp",
+  "tcp_tls/*.pem",
+  "ctypes_shared/*",
+  "ctypes_shared/*.so",
+  "ctypes_shared/*.dylib",
+  "ctypes_shared/*.dll",
+  "hello_ext/*.h",
 ]

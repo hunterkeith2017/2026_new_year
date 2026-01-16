@@ -16,18 +16,18 @@ Repository layout
 
    src/
      new_year_2026/
-       tcp_server.py
-       tcp_client.py
-       tls_echo_server.py
-       tls_echo_client.py
-       mini_tls_server.py
-       get_or_post.py
-       ssh_minimal_client.py
-       cert.pem
-       key.pem
-       examples/
-         ctypes_shared/
-         extension_pkg/
+       tcp_tls/
+         tcp_server.py
+         tcp_client.py
+         tls_echo_server.py
+         tls_echo_client.py
+         mini_tls_server.py
+         get_or_post.py
+         ssh_minimal_client.py
+         cert.pem
+         key.pem
+       ctypes_shared/
+       hello_ext/
    docs/
    .github/workflows/
 

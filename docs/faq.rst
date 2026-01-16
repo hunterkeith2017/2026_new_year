@@ -11,7 +11,7 @@ Why are there native examples inside the package?
 -------------------------------------------------
 
 The examples are included so the wheel can ship a complete learning kit. The
-extension package demo is still a standalone package under the examples path.
+pybind11 extension lives inside the main package under ``hello_ext``.
 
 Can I run the examples without installing?
 ------------------------------------------
@@ -20,4 +20,4 @@ Yes. You can run modules directly from the source tree, for example:
 
 .. code-block:: bash
 
-   python -m new_year_2026.tcp_server
+   python -m new_year_2026.tcp_tls.tcp_server

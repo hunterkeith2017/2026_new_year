@@ -1,1 +1,1 @@
-"""Learning scripts for TCP/TLS/HTTP/SSH demos."""
+"""Learning demos for TCP/TLS, HTTP, and SSH."""
