@@ -134,10 +134,11 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           # GitHub Packages repository URL
-          repository-url: https://upload.pypi.pkg.github.com/${{ github.repository_owner }}/
+          repository-url: https://upload.pypi.pkg.github.com/${{ github.repository_owner }}
         env:
           TWINE_USERNAME: ${{ github.actor }}
           TWINE_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          TWINE_DISABLE_SSL_VERIFY: true
 
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
